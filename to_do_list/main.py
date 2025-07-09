@@ -25,6 +25,10 @@ def display_tasks(cursor):
     
 # Update Tasks
 # Delete task
+def delete_task(conn,cursor,task_id):
+    cursor.execute("DELETE FROM tasks WHERE id=?",(task_id,))
+    conn.commit()
+    print("Task deleted")
 def main():
     conn, cursor = connect()
 
@@ -34,10 +38,11 @@ def main():
                     task_name TEXT,
                     task_description TEXT
                     )''')
+
     
     # create cli interface
     while True:
-        user_input =  input("1-Create, 2-Read : ")
+        user_input =  input("1-Create, 2-Read , 3-Delete : ")
 
         if user_input == 'q':
             break
@@ -47,6 +52,9 @@ def main():
             create_task(conn,cursor,task_name,task_description)
         if user_input == "2":
             display_tasks(cursor)
+        if user_input == "3":
+            task_id = int(input("which task ? : "))
+            delete_task(conn,cursor,task_id)
             
     conn.close()
     return
