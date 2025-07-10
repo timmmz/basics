@@ -19,8 +19,12 @@ int main(int argc, char *argv[]){
         printf("Result = %d\n",a + b);
     } else if (strcmp(op,"-") == 0) {
         printf("Result = %d\n",a - b);
+    } else if (strcmp(op, "/") == 0) {
+        printf("Result = %d\n",a/b);
+    } else if (strcmp(op, "x") == 0) {
+        printf("Result = %d\n", a * b);
     } else {
-        printf("Incorrect operator, please verify");
+        printf("Incorrect operator, please verify\n");
         return 1;
     }
         // return result
