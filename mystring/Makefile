@@ -1,2 +1,2 @@
-mystring: mystring.c	
-	gcc mystring.c -o mystring
+mystring: mystring2.c	
+	gcc mystring2.c -o mystring2

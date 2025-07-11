@@ -9,6 +9,16 @@ int mystrln(char *str){
     }
     return i;
 }
+
+void mystringcpy(char dest,char *str)
+{
+    // let's assume there is enough space in destination
+    // we loop in str and add in dest
+    for (int i = 0;i< mystrln(str);i++){
+        dest[i] = str[i]; 
+    }
+    dest[mystrln(str)] = '\0'
+}
  
 int mystrcmp(char *str, char *str2)
 {
@@ -71,5 +81,9 @@ int main() {
 
     printf("cmp str1 and str2 should be 0: %d / cmp str1 and str3 should be neg %d / cmp str3 and str2 should be pos %d\n",mystrcmp(str1,str2),mystrcmp(str1,str3),mystrcmp(str3,str2));
     printf("Let's concatenate bob and marlon %s", mystrcat("bob","marlon")); 
+    char dest[30];
+    char *str5 = "hello";
+    
+    printf("%s",)
     return 0;
 }
